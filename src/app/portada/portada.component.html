@@ -1,0 +1,89 @@
+<div class="row">
+  <div class="col">
+    <div class="main">Déjanos conocerte mejor</div>
+  </div>
+</div>
+
+<div class="row" [formGroup]="formulario">
+  <div class="col-12">
+    <div class="input-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Tipo de documento</mat-label>
+        <mat-select formControlName="tipoDocumento">
+          <mat-option
+            [value]="tipoDocumento"
+            *ngFor="let tipoDocumento of tiposDocumentos"
+            >{{ tipoDocumento }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="input-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Número de documento</mat-label>
+        <input
+          matInput
+          placeholder="1234567890"
+          formControlName="numeroDocumento"
+          type="number"
+        />
+        <mat-icon matSuffix>badge</mat-icon>
+        <!--
+          <mat-hint>Hint</mat-hint>
+        -->
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="input-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre completo</mat-label>
+        <input matInput placeholder="1234567890" formControlName="nombre" />
+        <mat-icon matSuffix>person</mat-icon>
+        <!--
+          <mat-hint>Hint</mat-hint>
+        -->
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="input-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Correo electrónico</mat-label>
+        <input matInput placeholder="1234567890" formControlName="correo"/>
+        <mat-icon matSuffix>mail</mat-icon>
+        <!--
+          <mat-hint>Hint</mat-hint>
+        -->
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="input-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Número de celular</mat-label>
+        <input matInput placeholder="1234567890" formControlName="celular" type="number"/>
+        <mat-icon matSuffix>phone_iphone</mat-icon>
+        <!--
+          <mat-hint>Hint</mat-hint>
+        -->
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <div class="input-container">
+      <button
+        mat-raised-button
+        type="button"
+        color="primary"
+        (click)="submit()"
+        [disabled]="formulario.invalid"
+      >
+        Siguiente
+      </button>
+    </div>
+  </div>
+</div>
