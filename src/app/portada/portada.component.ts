@@ -14,7 +14,7 @@ export class PortadaComponent implements OnInit {
 
   formulario: FormGroup;
 
-  tiposDocumentos = ['Cédula', 'Cédula de extranjería', 'Tarjeta de identidad'];
+  tiposDocumentos = ['Cédula de ciudadania', 'Cédula de extranjería', 'Tarjeta de identidad'];
 
   constructor(private formBuilder: FormBuilder, private router: Router) {
     this.formulario = this.formBuilder.group({

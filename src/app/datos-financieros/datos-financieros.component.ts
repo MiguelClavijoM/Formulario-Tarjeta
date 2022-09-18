@@ -26,7 +26,21 @@ export class DatosFinancierosComponent implements OnInit{
     });
 }
 
+
 submit(){
-  this.router.navigate(['resultados'])
+  this.router.navigate(['resultados'],{queryParams: {mensaje:"Estes es mi mensaje"}})
+  const data = this.formulario2.value 
+  let K;
+  if (data.tipoContrato=='Contrato fijo' || data.tipoContrato == 'Contrato indefinido'){
+    K = 1; 
+  }
+  else if (data.tipoContrato == 'Por prestación de servicios'){
+    K = 0.8;
+  }
+  else (data.tipoContrato == 'Por obra o labor')
+  K = 0.6;
 }
+
+
+
 }
