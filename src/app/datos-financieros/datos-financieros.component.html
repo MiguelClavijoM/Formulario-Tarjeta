@@ -1,1 +1,78 @@
-<p>datos-financieros works!</p>
+<div class="row">
+  <div class="col">
+    <div class="main">Déjanos conocerte mejor</div>
+  </div>
+</div>
+<div class="row" [formGroup]="formulario2">
+  <div class="col-12">
+    <div class="input-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Ingresos Mensuales</mat-label>
+        <input
+          matInput
+          placeholder="Cantidad"
+          formControlName="ingresosMensuales"
+          type="number"
+        />
+        <mat-icon matSuffix>attach_money</mat-icon>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="input-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Gastos Mensuales</mat-label>
+        <input
+          matInput
+          placeholder="Cantidad"
+          formControlName="gastosMensuales"
+          type="number"
+        />
+        <mat-icon matSuffix>shopping_cart</mat-icon>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="input-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Ocupación</mat-label>
+        <mat-select formControlName="ocupacion">
+          <mat-option
+            [value]="ocupacion"
+            *ngFor="let ocupacion of tiposDocumentos2"
+            >{{ ocupacion }}</mat-option
+          >
+        </mat-select>
+        <mat-icon matSuffix>perm_identity</mat-icon>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="input-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Tipo de contrato</mat-label>
+        <mat-select formControlName="tipoContrato">
+          <mat-option
+            [value]="tipoContrato"
+            *ngFor="let tipoContrato of tiposDocumentos3"
+            >{{ tipoContrato }}</mat-option
+          >
+        </mat-select>
+        <mat-icon matSuffix>library_books</mat-icon>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="input-container">
+      <button
+        mat-raised-button
+        type="button"
+        color="primary"
+        (click)="submit()"
+        [disabled]="formulario2.invalid"
+      >
+        Siguiente
+      </button>
+    </div>
+  </div>
+</div>
