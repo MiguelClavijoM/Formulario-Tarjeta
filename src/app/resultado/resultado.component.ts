@@ -8,10 +8,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ResultadoComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
-
+  titulo = "";
+  mensaje = "";
   ngOnInit(): void {
-    this.route.queryParams.subscribe((params) => {
+    this.route.queryParams.subscribe((params: any) => {
       console.log(params);
+      this.titulo = params.titulo;
+      this.mensaje = params.mensaje;
     });
   }
 }
